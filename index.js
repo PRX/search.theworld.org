@@ -1,6 +1,6 @@
 const { google } = require('googleapis');
 
-exports.handler = async function handler(event, context, callback) {
+exports.handler = async function handler(event) {
   const qsp = event.queryStringParameters;
 
   const gcs = google.customsearch({

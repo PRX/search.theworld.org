@@ -1,0 +1,30 @@
+{
+  "name": "search.theworld.org",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">= 14.0.0"
+  },
+  "description": "Search API for theworld.org",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo Okay",
+    "build": "npm run build-sync && npm run build-prune && npm run build-zip",
+    "build-sync": "rsync -crl --delete --exclude-from .lambdaignore . build",
+    "build-prune": "cd build && yarn --production",
+    "build-zip": "rm -f build.zip && cd build && zip -rq ../build.zip ."
+  },
+  "repository": "git@github.com:PRX/search.theworld.org.git",
+  "keywords": [
+    "lambda",
+    "prx",
+    "search"
+  ],
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/PRX/search.theworld.org/issues"
+  },
+  "homepage": "https://github.com/PRX/search.theworld.org#readme",
+  "dependencies": {
+    "googleapis": "^89.0.0"
+  }
+}

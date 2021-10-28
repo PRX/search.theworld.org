@@ -8,14 +8,13 @@ exports.handler = async function handler(event) {
     auth: process.env.CSE_API_KEY,
   });
 
-  const listParams = {
+  const results = await gcs.cse.siterestrict.list({
     cx: process.env.ENGINE_ID,
     q: !qsp.l || qsp.l !== 'all' ? `${qsp.q} more:${qsp.l}`: (qsp.q),
     ...(qsp.s && { start: qsp.s })
-  };
-  const results = await gcs.cse.siterestrict.list(listParams);
+  });
 
-  const response = {
+  return {
     statusCode: 200,
     headers: {
         'Content-Type': 'application/json',
@@ -25,5 +24,4 @@ exports.handler = async function handler(event) {
     },
     body: JSON.stringify(results.data),
   };
-  return response;
 };

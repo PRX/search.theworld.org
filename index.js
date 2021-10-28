@@ -15,5 +15,15 @@ exports.handler = async function handler(event) {
   };
   const results = await gcs.cse.siterestrict.list(listParams);
 
-  return JSON.stringify(results.data);
+  const response = {
+    statusCode: 200,
+    headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Headers': 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token',
+        'Access-Control-Allow-Methods': 'GET,OPTIONS',
+        'Access-Control-Allow-Origin': '*'
+    },
+    body: JSON.stringify(results.data),
+  };
+  return response;
 };

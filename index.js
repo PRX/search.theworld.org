@@ -11,7 +11,8 @@ exports.handler = async function handler(event) {
   const results = await gcs.cse.siterestrict.list({
     cx: process.env.ENGINE_ID,
     q: !qsp.l || qsp.l !== 'all' ? `${qsp.q} more:${qsp.l}`: (qsp.q),
-    ...(qsp.s && { start: qsp.s })
+    ...(qsp.s && { start: qsp.s }),
+    ...(qsp.t && { sort: qsp.t })
   });
 
   return {

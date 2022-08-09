@@ -4,6 +4,7 @@ env:
     PRX_LAMBDA_CODE_CONFIG_PARAMETERS: "TheWorldSearchCodeS3ObjectKey"
     PRX_LAMBDA_ARCHIVE_BUILD_PATH: /app/build.zip
     PRX_SPIRE_S3_PKG_PARAMETERS: LAMBDA_ZIP=/prx/stag/Spire/The_World-Search/pkg/s3-object-key
+    PRX_S3_ARCHIVE_BUILD_PATH: /app/build.zip
   parameter-store:
     DOCKERHUB_USERNAME: /prx/DOCKERHUB_USERNAME
     DOCKERHUB_PASSWORD: /prx/DOCKERHUB_PASSWORD
@@ -12,7 +13,6 @@ env:
     - PRX_LAMBDA_CODE_CONFIG_VALUE
     - PRX_SPIRE_S3_PKG_PARAMETERS
     - LAMBDA_ZIP
-    - PRX_LAMBDA_ARCHIVE_BUILD_PATH
 phases:
   pre_build:
     commands:

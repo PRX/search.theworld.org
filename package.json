@@ -6,13 +6,6 @@
   },
   "description": "Search API for theworld.org",
   "main": "index.js",
-  "scripts": {
-    "test": "echo Okay",
-    "build": "npm run build-sync && npm run build-prune && npm run build-zip",
-    "build-sync": "rsync -crl --delete --exclude-from .lambdaignore . build",
-    "build-prune": "cd build && yarn --production",
-    "build-zip": "rm -f build.zip && cd build && zip -rq ../build.zip ."
-  },
   "repository": "git@github.com:PRX/search.theworld.org.git",
   "keywords": [
     "lambda",

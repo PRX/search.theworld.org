@@ -78,4 +78,3 @@ docker-compose run test
 ## License
 
 [AGPL License](https://www.gnu.org/licenses/agpl-3.0.html)
-

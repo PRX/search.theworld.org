@@ -17,8 +17,6 @@ RUN yarn install
 
 ADD index.js .
 
-RUN ls -l
-
 # This zip file is what will be deployed as the Lambda layer.
 # Add any necessary files to it.
 RUN zip --quiet --recurse-paths /.prxci/build.zip .

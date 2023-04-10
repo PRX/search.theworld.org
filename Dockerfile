@@ -9,12 +9,6 @@ RUN mkdir --parents /.prxci
 
 RUN apk add zip
 
-ADD package.json ./
-ADD yarn.lock ./
-RUN npm install --global npm@latest
-RUN npm update --global yarn
-RUN yarn install --production=true
-
 ADD index.js .
 
 # This zip file is what will be deployed as the Lambda layer.

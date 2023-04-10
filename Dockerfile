@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:16
+FROM node:18-alpine
 
 LABEL maintainer="PRX <sysadmin@prx.org>"
 LABEL org.prx.spire.publish.s3="LAMBDA_ZIP"
@@ -13,7 +13,7 @@ ADD package.json ./
 ADD yarn.lock ./
 RUN npm install --global npm@latest
 RUN npm install --global yarn
-RUN yarn install
+RUN yarn install --production=true
 
 ADD index.js .
 

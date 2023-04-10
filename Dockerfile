@@ -12,7 +12,7 @@ RUN apk add zip
 ADD package.json ./
 ADD yarn.lock ./
 RUN npm install --global npm@latest
-RUN npm install --global yarn
+RUN npm update --global yarn
 RUN yarn install --production=true
 
 ADD index.js .

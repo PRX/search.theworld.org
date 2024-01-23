@@ -8,6 +8,7 @@
   "description": "Search API for theworld.org",
   "main": "index.js",
   "repository": "git@github.com:PRX/search.theworld.org.git",
+  "type": "module",
   "keywords": [
     "lambda",
     "prx",

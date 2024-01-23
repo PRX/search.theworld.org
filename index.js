@@ -1,6 +1,6 @@
 import { google } from "googleapis";
 
-exports.handler = async function handler(event) {
+export const handler = async (event) => {
   const qsp = event.queryStringParameters;
 
   const gcs = google.customsearch({

@@ -1,4 +1,4 @@
-const { google } = require("googleapis");
+import { google } from "googleapis";
 
 exports.handler = async function handler(event) {
   const qsp = event.queryStringParameters;
